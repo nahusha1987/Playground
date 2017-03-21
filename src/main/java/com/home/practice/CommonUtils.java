@@ -3,6 +3,8 @@ package com.home.practice;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 public class CommonUtils {
 	private static SecureRandom secureRandom;
 	static {
@@ -14,12 +16,24 @@ public class CommonUtils {
 		}
 	}
 
-	public static int[] getRandomNumbers(int count, int bound) {
+	public static int getRandomNumber(int bound) {
+		return secureRandom.nextInt(bound);
+	}
+	
+	public static int[] getRandomArray(int count, int bound) {
 		int[] nums = new int[count];
 
 		int index = 0;
 		while (count-- > 0)
 			nums[index++] = secureRandom.nextInt(bound);
 		return nums;
+	}
+	
+	public static String getRandomString() {
+		return RandomStringUtils.randomAlphabetic(5);
+	}
+	
+	public static double getRandomDouble() {
+		return Math.round(secureRandom.nextDouble() * 100);
 	}
 }

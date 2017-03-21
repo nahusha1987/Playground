@@ -9,9 +9,9 @@ import java.util.Arrays;
  * @author Baba
  *
  */
-public class BubbleSort {
+public class BubbleSortDemo {
 	public static void main(String[] args) {
-		int [] array = CommonUtils.getRandomNumbers(10, 100);
+		int [] array = CommonUtils.getRandomArray(10, 100);
 		System.out.println("Before sorting");
 		System.out.println(Arrays.toString(array));
 		System.out.println("\nAfter sorting");
