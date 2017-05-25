@@ -21,7 +21,9 @@ public class ComparatorExample {
 		}
 		fw.close();
 		SalaryComparator sc = new SalaryComparator();
-		Collections.sort(employees,sc);
+		NameComparator nc = new NameComparator();
+		Collections.sort(employees,nc);
+		
 		fw = new FileWriter(new File("C:/Users/Baba/personSorted.txt"));
 		for (Employee e : employees) {
 			fw.write(e.getName() + "   " + e.getAge() + "   " + e.getSalary() + "\n");
@@ -46,6 +48,16 @@ class AgeComparator implements Comparator<Employee> {
 		return o1.getAge() - o2.getAge();
 	}
 
+}
+
+class NameComparator implements Comparator<Employee> {
+
+	@Override
+	public int compare(Employee o1, Employee o2) {
+		return o1.getName().compareTo(o2.getName());
+	}
+	
+	
 }
 
 class EmployeeFactory {

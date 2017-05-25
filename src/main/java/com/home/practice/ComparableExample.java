@@ -11,13 +11,15 @@ public class ComparableExample {
 	public static void main(String[] args) throws IOException {
 		List<Person> persons = new ArrayList<>();
 		FileWriter fw = new FileWriter(new File("C:/Users/Baba/persons.txt"));
-		for(int i = 0; i < 50; i++ )
+		for(int i = 0; i < 100; i++ )
 			persons.add(PersonFactory.getPerson());
 		for(Person p : persons) {
 			fw.write(p.getName() + "   " + p.getAge() + "   " + p.getSalary() + "\n");
 		}
 		fw.close();
+		
 		Collections.sort(persons);
+		
 		fw = new FileWriter(new File("C:/Users/Baba/personSorted.txt"));
 		for(Person p : persons) {
 			fw.write(p.getName() + "   " + p.getAge() + "   " + p.getSalary() + "\n");
@@ -69,8 +71,8 @@ class Person implements Comparable<Person> {
 
 	@Override
 	public int compareTo(Person o) {
-		//return this.getName().compareTo(o.getName());
-		return this.getAge() -o.getAge();
+		return this.getName().compareTo(o.getName());
+		//return this.getAge() -o.getAge();
 	}
 	
 	
