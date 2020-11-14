@@ -5,7 +5,7 @@ public class Trade {
 		return false;
 	}
 	public String getStatus() {
-		return null;
+		return "status";
 	}
 	public boolean isBigTrade() {
 		return true;

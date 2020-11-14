@@ -18,7 +18,7 @@ public class CapturingLambda05 {
 
 		// Check open trade
 		ITrade iTrade = (trade) -> trade.isOpen();
-		iTrade.check(t);
+		System.out.println(iTrade.check(t));
 		
 		// Check status & observe Capturing Lambda feature
 		String status = "trading";
@@ -27,6 +27,11 @@ public class CapturingLambda05 {
 		ITrade statusTrade = (trade) -> {
 			return trade.getStatus().equals(status);
 			};
-		statusTrade.check(t);
+		System.out.println(statusTrade.check(t));
+
+		ITrade isBigTrade = (trade) -> {
+			return trade.isBigTrade() == Boolean.TRUE;
+		};
+		System.out.println(isBigTrade.check(t));
 	}
 }

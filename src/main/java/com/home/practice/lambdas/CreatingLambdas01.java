@@ -15,18 +15,16 @@ public class CreatingLambdas01 {
 	private void testRunnable(Runnable runnable) {
 		new Thread(runnable).start();
 	}
-	
+
 	public static void main(String[] args) {
 		
 		new CreatingLambdas01().testGreeting("nahusha", new Greeting() {
-			
 			@Override
 			public String sayHello(String name) {
 				 return "Hello " + name;
 			}
 		});
-		
-		
+
 		new CreatingLambdas01().testGreeting("nahusha", (String s) -> "Hello " + s);
 		
 		new CreatingLambdas01().testGreeting("", (String s) -> s.isEmpty() ? "Did you miss something? " : "Hello "+ s);
